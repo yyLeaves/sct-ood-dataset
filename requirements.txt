@@ -1,7 +1,9 @@
 matplotlib
 nibabel
+opencv-python
 openpyxl
 pandas
+scikit-image
 scipy
 SimpleITK
 tqdm
