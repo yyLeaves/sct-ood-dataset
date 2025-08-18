@@ -1,0 +1,5 @@
+data/Task1/brain/*
+data/Task1/pelvis/*
+*.zip
+!.gitkeep
+nyul_work/
