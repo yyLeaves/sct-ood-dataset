@@ -133,15 +133,11 @@ Refer [notebook 5](notebooks/5_ct_scan_level_thresh_visualization.ipynb) for det
 
 ### MR Preprocessing
 0. Did not resample according to pixel spacing and did not remove bias field (takes long)
-1. Nyul normalization + then clip to (0, 255)
-  - NYUL_MIN_VALUE = 0
-  - NYUL_MAX_VALUE = 255
-  - NYUL_MIN_PERCENTILE = 1
-  - NYUL_MAX_PERCENTILE = 99
-  - Problem: Scans that start with 1PC has too many 0s even after applying mask
-  - Percentiles: {1: 0.0, 5: 0.0, 10: 0.0, 25: 2.0, 50: 11.0, 75: 43.0, 90: 71.0, 95: 86.0, 99: 119.0}
+1. Min max normalization + then clip to (0, 255)
+  - MR intensity is clipped to 2000
 2. Center image
   - Problem: mask file didn't cover the marker sometimes
+  ![Marker fail example](images/9_1PA113_21.png) Use big thresh for contour extraction
 3. Pad to square
 4. Resize to (240, 240)
   - Problem: small hotspots were not preserved during resizing
